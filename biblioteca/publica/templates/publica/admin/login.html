@@ -1,0 +1,84 @@
+{% include 'publica/sitio/nav.html' %}
+
+    <div class="container">
+        <div class="row">
+            <br>
+            <div class="col-md-4">
+                
+            </div>
+            <div class="col-md-4">
+                <br>
+                {% if mensaje %} <!--detecta codigo python-->
+                <div class="alert alert-danger" role="alert"> 
+                  <strong>{{ mensaje }}</strong><br>
+                  Usuario y/o contraseña incorrectos.  <!--detecta variable, jinja2-->
+                </div>
+              
+
+                {% endif %}
+
+
+
+              
+
+                <div class="card">
+                    <div class="card-header">
+                        Inicio de sesión
+                    </div>
+                    <div class="card-body">
+
+                        <form action="/admin/login" method="post" enctype="multipart/form-data">
+
+                            <div class="mb-3">
+                              <label for="txtUsuario" class="form-label">Usuario:</label>
+                              <input type="text" class="form-control" name="txtUsuario" id="txtUsuario" aria-describedby="helpId" placeholder="Escriba su usuario">
+                              <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+                            </div>
+
+                            <div class="mb-3">
+                              <label for="txtPassword" class="form-label">Contraseña</label>
+                              <input type="password" class="form-control" name="txtPassword" id="txtPassword" aria-describedby="helpId" placeholder="Escriba su constraseña">
+                              <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Iniciar sesión</button>   
+                            <p>o <a href="{% url 'registro' %}">Regístrate</a></p>
+                            {% comment %} <p>o <a href="{% url 'login' %}">Regístrate</a></p> {% endcomment %}
+                               
+
+                        </form>
+
+                    </div>
+
+                    <div class="card-footer text-muted">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            
+        </div>
+    </div>
+
+  <header>
+    <!-- place navbar here -->
+  </header>
+  <main>
+
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
